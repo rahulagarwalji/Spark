@@ -1,10 +1,11 @@
 import boto3
 import botocore
 
-Bucket = "Your S3 BucketName"
+Bucket = "Your S3 Bucket Name"
 Key = "Name of the file in S3 that you want to download"
 outPutName = "Output file name(The name you want to save after we download from s3)"
 
+# create boto3 resource object
 s3 = boto3.resource('s3')
 try:
     s3.Bucket(Bucket).download_file(Key, outPutName)
