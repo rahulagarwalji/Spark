@@ -1,4 +1,4 @@
-# import required python packages
+ # import required python packages
 import boto3
 import botocore
 
@@ -12,7 +12,7 @@ try:
     s3.Bucket(Bucket).download_file(Key, outPutName)
 except botocore.exceptions.ClientError as e:
     if e.response['Error']['Code'] == "404":
-        print("The object does not exist.")
+        print("The object does not exist")
     else:
-		print("Error while downloading the file to S3" + str(e))
+		print("Error while downloading the file to S3 " + str(e))
         raise
